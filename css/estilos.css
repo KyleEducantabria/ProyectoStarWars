@@ -12,8 +12,13 @@ body {
 }
 
 .titulo {
+    font-size: xxx-large;
     text-align: center;
     color: #e3ab42;
+}
+
+hr {
+    width: 70%;
 }
 
 h3 {
@@ -34,7 +39,7 @@ img {
     flex-direction: row;
     width: 100%;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 8%;
     justify-content: center;
     color: #e3ab42;
 }
@@ -47,6 +52,12 @@ img {
 
 
 
+
+
+/* Rotación de las cartas */
+/* El z-index hace que unas estén debajo de otras (0 la más baja, 2 la más alta.
+   El transform simplemente las rota a distintos grados y las pone unas más lejos de otras, menos la de en medio.
+*/
 a:first-child {
     z-index: 0;
     transform: rotate(-45deg) translateX(100px) translateY(200px);
@@ -67,24 +78,27 @@ a:nth-child(5) {
     z-index: 0;
     transform: rotate(45deg) translateX(-100px) translateY(200px);
 }
+
+/* Animación de las cartas al hacer hover */
+/* El z-index hace que la carta a la que se hace hover pase al frente */
 a:first-child:hover {
     z-index: 10;
-    transform: rotate(-15deg) translateX(150px) translateY(0);
+    transform: rotate(-15deg) translateX(150px) translateY(30px);
 }
 a:nth-child(2):hover {
     z-index: 10;
-    transform: rotate(-10deg) translateX(100px) translateY(-50px);
+    transform: rotate(-10deg) translateX(100px) translateY(-40px);
 }
 a:nth-child(3):hover {
     z-index: 10;
-    transform: rotate(0) translateX(0) translateY(-70px);
+    transform: rotate(0) translateX(0) translateY(-80px);
 }
 a:nth-child(4):hover {
     z-index: 10;
-    transform: rotate(10deg) translateX(-100px) translateY(-50px);
+    transform: rotate(10deg) translateX(-100px) translateY(-40px);
 }
 a:nth-child(5):hover {
     z-index: 10;
-    transform: rotate(15deg) translateX(-150px) translateY(0);
+    transform: rotate(15deg) translateX(-150px) translateY(30px);
 }
 
