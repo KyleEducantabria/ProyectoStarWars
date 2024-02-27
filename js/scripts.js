@@ -43,9 +43,25 @@ function cargarDatos(personaje){
             const divFilaUno = $('<div class="fila-uno">');
             const divFilaDos = $('<div class="fila-dos">');
 
-            
+            const divGenerales = $('<div>');
+            const divOrigen = $('<div>');
+            const divApariciones = $('<div>');
+            const divNave = $('<div>');
+            const divVehiculo = $('<div>');
+
+            const resultados = datos.results[0];
+
+            console.log(resultados);
+
+            let parrafo;
+
+            parrafo = $("<p>").append("Nombre: " + resultados.name);
+            parrafo.appendTo(divDatos);
+
+            //if array.lenght != 0 muestro las cosas que estén en el array
 
 
+            $("body").append(divDatos);
         }
     });
 

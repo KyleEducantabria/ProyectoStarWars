@@ -40,6 +40,7 @@ img {
     width: 100%;
     text-align: center;
     margin-top: 8%;
+    margin-bottom: 10%;
     justify-content: center;
     color: #e3ab42;
 }
@@ -48,6 +49,10 @@ img {
     background-image: url("../recursos/img/card_bg.jpg");
     border-radius: 10px;
     box-shadow: 0 0 30px #e4c33e;
+}
+
+.datos {
+    color: #e3ab42;
 }
 
 
