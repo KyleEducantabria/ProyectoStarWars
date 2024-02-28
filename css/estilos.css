@@ -1,31 +1,39 @@
+/* Establezco la fuente que voy a usar y su ubicación. */
 @font-face {
     font-family: fuenteStarWars;
     src: url("../recursos/fuentes/STARWARS.ttf");
 }
 
-* {
+/* Pongo el fondo en el body y establezco que todo en él va a usar la fuente de star wars. */
+body {
+    background-image: url("../recursos/img/bg.png");
     font-family: fuenteStarWars;
 }
 
-body {
-    background-image: url("../recursos/img/bg.png");
-}
-
+/* Hago que la clase título texta el texto más grande, centrado, y en un color igual al del título de Star Wars */
 .titulo {
     font-size: xxx-large;
     text-align: center;
     color: #e3ab42;
 }
 
+/* Establezco el ancho de la línea que divide el título de todo lo demás a 70% */
 hr {
     width: 70%;
 }
 
+/* Indico el margen que van a tener todos los h3, que compondrán los textos de las cartas
+   Esto es para asegurarme de que no se solapan con los bordes. Luego, hago la fuente más grande y centro el texto.
+*/
 h3 {
     margin: 25px 0;
     font-size: x-large;
     justify-content: center;
 }
+
+/* Establezco los márgenes que tendrán las imágenes con respecto al contenedor de la carta, su alto y su ancho
+   También les pongo border -radius y box-shadow para que queden como se solicita en el enunciado.
+*/
 img {
     margin: 10px 30px 30px;
     width: 150px;
@@ -34,6 +42,7 @@ img {
     box-shadow: 5px 5px 0 gray;
 }
 
+/* Establezco que todas las cartas se van a mostrar en línea, que van a estar centradas, su ubicación, color de texto, sombra del texto... */
 .cartas {
     display: flex;
     flex-direction: row;
@@ -46,12 +55,14 @@ img {
     text-shadow: 2px 2px #c0881f;
 }
 
+/* Marco el fondo de la carta con la imagen que se solicita en el enunciado y le pongo a cada carta un brillo propio exterior como se pide, además de hacer los bordes redondos. */
 .carta {
     background-image: url("../recursos/img/card_bg.jpg");
     border-radius: 10px;
     box-shadow: 0 0 30px #e4c33e;
 }
 
+/* Establezco que los divs dentro de datos se muestren uno en cada fila, el color y tamaño que tendrá su texto, y la separación con los bordes de la pantalla. */
 .datos {
     display: flex;
     flex-direction: column;
@@ -61,12 +72,19 @@ img {
     font-size: large;
 }
 
+/* Hago que todos los divs dentro de fila-uno se muestren en la misma fila. 
+   Además hago que se espacien de tal manera que ocupen todo el espacio por igual. 
+*/
 .fila-uno {
     display: flex;
     flex-direction: row;
     justify-content:space-between;
 }
 
+/* Hago que todos los divs dentro de fila-dos se muestren en la misma fila. 
+   Además hago que se espacien de tal manera que ocupen todo el espacio por igual.
+   También pongo un margen superior para que no quede muy pegado al div anterior.
+*/
 .fila-dos {
     margin-top: 5%;
     display: flex;
@@ -76,11 +94,10 @@ img {
 
 
 
-
-
 /* Rotación de las cartas */
 /* El z-index hace que unas estén debajo de otras (0 la más baja, 2 la más alta.
    El transform simplemente las rota a distintos grados y las pone unas más lejos de otras, menos la de en medio.
+   A cada elemento <a> (las cartas) le asigna una rotación y eje distinto en base a qué número de elemento sea, para que quede el efecto solicitado.
 */
 a:first-child {
     z-index: 0;
@@ -104,7 +121,10 @@ a:nth-child(5) {
 }
 
 /* Animación de las cartas al hacer hover */
-/* El z-index hace que la carta a la que se hace hover pase al frente */
+/* El z-index hace que la carta a la que se hace hover pase al frente
+   A cada elemento <a> (las cartas) le asigna una rotación y eje distinto en base a qué número de elemento sea cuando se pasa el ratón por encima, para que quede el efecto solicitado.
+*/
+
 a:first-child:hover {
     z-index: 10;
     transform: rotate(-15deg) translateX(150px) translateY(30px);
@@ -125,4 +145,3 @@ a:nth-child(5):hover {
     z-index: 10;
     transform: rotate(15deg) translateX(-150px) translateY(30px);
 }
-
